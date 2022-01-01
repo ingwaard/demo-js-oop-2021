@@ -26,6 +26,18 @@ console.log(chocolate2);
 
 console.log(Chocolate());
 
+class ChocolateSample {
+    constructor(base, filling, shape, price){
+        this.base = base || ' '
+        this.filling = filling || ' '
+        this.shape = shape || ' '
+        this.price = price || 0
+    }
+}
+const chocolate3 = new ChocolateSample('white chocolate',  'fudge','complex', 17);
+
+console.log(chocolate3)
+
 
 
 
