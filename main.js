@@ -38,7 +38,45 @@ const chocolate3 = new ChocolateSample('white chocolate',  'fudge','complex', 17
 
 console.log(chocolate3)
 
+class ChocolateSample {
+    #price
+    constructor(base = '', filling = '', shape = '', price = 0) {
+        this.setPrice = function (price) {
+            if (/^[0-9]{1,2}$/.test(price) & price > 0) {
+                this.#price = price
+            } else {
+                throw new Error("Incorrect data")
 
+            }
+        }
+        this.getPrice = function(){
+            return this.#price
+        }
+    }
+}
+const chocolate4 = new ChocolateSample()
+
+
+try {
+    chocolate4.setPrice(20)
+    console.log(chocolate4)
+} catch (ex) {
+    console.log('Example 1: ${ex.message}')
+}
+
+try {
+    chocolate4.setPrice(0)
+    console.log(chocolate4)
+} catch (ex){
+    console.log('Example 2: ${ex.message}')
+}
+
+try {
+    chocolate4.setPrice(100)
+    console.log(chocolate4)
+} catch (ex){
+    console.log('Example 3: ${ex.message}')
+}
 
 
 
